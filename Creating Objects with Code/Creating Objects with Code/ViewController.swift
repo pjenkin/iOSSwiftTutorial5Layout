@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    let myButton = UIButton()       // NB button added outside method, in class, to allow access to it from action function via self.myButton
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,7 +34,7 @@ class ViewController: UIViewController {
         
         
         
-        let myButton = UIButton()
+        
         myButton.frame = CGRect(x: width * 0.2, y: height * 0.5, width: width * 0.6, height:50)
         myButton.setTitle("My code-writ button", for: UIControlState.normal)
         myButton.setTitleColor(UIColor.cyan, for: UIControlState.normal)
@@ -42,6 +45,7 @@ class ViewController: UIViewController {
 
     func myButtonAction() {
         print("myButton was clicked")
+        self.myButton.setTitleColor(UIColor.darkGray, for: UIControlState.normal)
     }
     
     
