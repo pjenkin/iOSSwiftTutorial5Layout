@@ -30,8 +30,21 @@ class ViewController: UIViewController {
         view.addSubview(myLabel)
         
         
+        
+        let myButton = UIButton()
+        myButton.frame = CGRect(x: width * 0.2, y: height * 0.5, width: width * 0.6, height:50)
+        myButton.setTitle("My code-writ button", for: UIControlState.normal)
+        myButton.setTitleColor(UIColor.cyan, for: UIControlState.normal)
+        view.addSubview(myButton)
+        
+        myButton.addTarget(self, action: #selector(ViewController.myButtonAction), for: UIControlEvents.touchUpInside)
     }
 
+    func myButtonAction() {
+        print("myButton was clicked")
+    }
+    
+    
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
